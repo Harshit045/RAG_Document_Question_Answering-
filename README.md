@@ -48,6 +48,7 @@ Get your API keys for:
 ### 5. Run the Application 🏃
 Launch the Streamlit application:
 ```bash
+cd src
 streamlit run app.py
 ```
 
@@ -68,8 +69,12 @@ Use the left sidebar interface to upload one or more PDF files containing the co
 ## Project Structure 📁
 
 ```text
-├── app.py              # Main application file with Streamlit interface
-├── rag_backend.py      # Handles PDF processing, embedding, and hybrid retrieval
+├── .devcontainer/      # Dev container configuration
+├── src/                # Source code directory
+│   ├── app.py          # Main application file with Streamlit interface
+│   └── rag_backend.py  # Handles PDF processing, embedding, and hybrid retrieval
+├── .gitattributes      # Git attributes configuration
+├── LICENSE             # Apache 2.0 License
 ├── requirements.txt    # Project dependencies
 └── README.md           # Project documentation
 ```
