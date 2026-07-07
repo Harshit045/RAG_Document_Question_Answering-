@@ -1,0 +1,16 @@
+# API Keys and Secrets
+.env
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# RAG Data and Databases
+data/
+chroma_db/
+*.pkl
