@@ -20,8 +20,8 @@ Follow the steps below to run and interact with the project:
 ### 1. Clone the Repository
 Clone the repository to your local system using the following command:
 ```bash
-git clone <your_github_repo_link_here>
-cd <your_repo_name>
+git clone https://github.com/Harshit045/RAG_Document_Question_Answering-.git
+cd RAG_Document_Question_Answering-
 ```
 
 ### 2. Create and Activate a Virtual Environment 🐍
