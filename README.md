@@ -72,7 +72,8 @@ Use the left sidebar interface to upload one or more PDF files containing the co
 ├── .devcontainer/      # Dev container configuration
 ├── src/                # Source code directory
 │   ├── app.py          # Main application file with Streamlit interface
-│   └── rag_backend.py  # Handles PDF processing, embedding, and hybrid retrieval
+│   ├── vectorstore.py  # Handles PDF processing, embedding, and hybrid retrieval
+│   └── chatbot.py      # Handles user interaction and response generation
 ├── .gitattributes      # Git attributes configuration
 ├── LICENSE             # Apache 2.0 License
 ├── requirements.txt    # Project dependencies

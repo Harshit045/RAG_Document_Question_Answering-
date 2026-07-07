@@ -1,7 +1,7 @@
 import streamlit as st
 import os
-from rag_backend import create_hybrid_retriever
-from langchain_google_genai import ChatGoogleGenerativeAI
+from vectorstore import create_hybrid_retriever
+from chatbot import get_answer
 
 st.set_page_config(page_title="RAG Document Q&A", page_icon="🤖")
 
@@ -54,29 +54,9 @@ if st.button("Get Answer"):
                 if not context:
                     st.info("I couldn't find relevant information in the documents.")
                 else:
-                    llm = ChatGoogleGenerativeAI(
-                        model="gemini-2.5-flash",
-                        temperature=0,
-                        google_api_key=api_key
-                    )
-                    
-                    prompt = f"""
-                    You are a helpful assistant. Use the following retrieved context to answer the user's question.
-                    If you don't know the answer based on the context, just say that you don't know. 
-                    Do not make up information.
-                    
-                    Context:
-                    {context}
-                    
-                    Question:
-                    {query}
-                    
-                    Answer:
-                    """
-                    
-                    response = llm.invoke(prompt)
+                    answer = get_answer(context, query, api_key)
                     st.write("### Answer:")
-                    st.write(response.content)
+                    st.write(answer)
             except Exception as e:
                 st.error(f"An error occurred: {e}")
     else:
